@@ -2,6 +2,8 @@ package object;
 import java.util.Scanner;
 
 public class Player extends GameObject{
+	public int bunnyScore = 0;
+	public int life = 1;
 	public Player() {
 		super(0,0,1);
 		shape = 'P';
@@ -20,7 +22,7 @@ public class Player extends GameObject{
 				this.x = this.x - distance;
 			break;
 		case "s":
-			if( getY() == 9) {
+			if( getY() == 5) {
 				System.out.println("You can't move that way!");
 				break;
 			}
@@ -28,7 +30,7 @@ public class Player extends GameObject{
 				this.y = this.y + distance;
 			break;
 		case "d":
-			if( getX() == 19 ) {
+			if( getX() == 11 ) {
 				System.out.println("You can't move that way!");
 				break;
 			}
