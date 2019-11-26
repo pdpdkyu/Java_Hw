@@ -4,11 +4,10 @@ import java.util.*;
 public class Bunny extends GameObject {
 	
 	public static Vector<Bunny> bunnyList = new Vector<Bunny>();  // 버니를 효율적으로 관리할 벡터를 생성합니다.
-	
 	int loneliness= 0;
 	public static int bunnyCount = 0;
 	public Bunny() {
-		super(rNum0_11(), rNum0_5()/2, rNum0_19()/9);
+		super(rNum0_11(), rNum0_11()/2, rNum0_19()/9);
 			shape = 'B';
 			bunnyCount++;
 	}
@@ -21,10 +20,15 @@ public class Bunny extends GameObject {
 	}
 	
 	public void move() {
-		this.x = this.x + (distance - 2);
-		setDistance();
-		this.y = this.y + (distance - 2);
-		setDistance();
+		if(rNum0_2()==1) {
+			this.x = this.x + (distance - 2);
+			setDistance();
+		}
+		
+		else {
+			this.y = this.y + (distance - 2);
+			setDistance();
+		}
 		loneliness++;
 		
 		if(x<0)	x = 0; if(x>11) x = 11;
